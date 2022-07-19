@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'zhengxuexian_blog',
   tagline: 'zhengxuexian_blog',
-  url: 'https://junzhen6888.github.io/zhengxuexian_blog/',
-  baseUrl: '/',
+  url: 'https://junzhen6888.github.io',
+  baseUrl: '/zhengxuexian_blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'junzhen6888', // Usually your GitHub org/user name.
-  projectName: 'junzhen6888.github.io', // Usually your repo name.
+  projectName: 'zhengxuexian_blog', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
