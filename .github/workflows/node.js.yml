@@ -32,8 +32,10 @@ jobs:
     - name: 📂 Deploy to aliyun server
       uses: easingthemes/ssh-deploy@v2.1.5
       env:
+        SSH_PRIVATE_KEY: ${{ secrets.BAIDUYUN }}
+        ARGS: "-avzr --delete"
         SOURCE: "build/"
-        REMOTE_HOST: "180.76.115.65"
-        REMOTE_USER: "root"
+        REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: "/tmp/blog"
 
