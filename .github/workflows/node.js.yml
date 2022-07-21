@@ -34,7 +34,7 @@ jobs:
       with:
         server: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.REMOTE_USER }}
-        ssh_private_key: ${{ secrets.passwd }}
+        ssh_private_key: ${{ secrets.BAIDUYUN }}
         local_path: './build/*'  # 对应我们项目build的文件夹路径
         remote_path: '/tmp/blog'
 
