@@ -30,12 +30,12 @@ jobs:
     - run: npm run build --if-present
 
     - name: 📂 Deploy to baiduyun server
-      uses: easingthemes/ssh-deploy@v2.1.5
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.BD_YUN }}
-        ARGS: "-avzr --delete"
-        SOURCE: "build/*"
-        REMOTE_HOST: ${{ secrets.BD_SERVER_HOST }}
-        REMOTE_USER: ${{ secrets.BD_USER }}
-        TARGET: "/tmp/blog"
+      uses: wlixcc/SFTP-Deploy-Action@v1.0
+      with:
+        server: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        ssh_private_key: ${{ secrets.passwd }}
+        local_path: './build/*'  # 对应我们项目build的文件夹路径
+        remote_path: '/tmp/blog'
+
 
