@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.16]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # See 1 supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
         server: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         password: ${{ secrets.PASSWD }}
-        local-dir: './build/'  # 项目build的文件夹路径1
-        server-dir: '/tmp/blog/'
+        local-dir: ./build/  
+        server-dir: /tmp/blog/
 
 
