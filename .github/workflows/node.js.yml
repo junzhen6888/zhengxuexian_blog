@@ -29,6 +29,12 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
 
+    - name: Pass the received secret to an action
+      uses: ./.github/actions/my-action
+      with:
+        token: ${{ secrets.GIT_TOKEN }}
+        run: echo The username is ${{ secrets.SERVER_HOST }}
+
     - name: 📂 Deploy to baiduyun server
       uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:
