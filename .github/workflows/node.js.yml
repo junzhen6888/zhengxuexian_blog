@@ -29,19 +29,13 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
 
-    - name: Pass the received secret to an action
-      uses: wlixcc/SFTP-Deploy-Action@v1.0
-      with:
-        token: ${{ secrets.GIT_TOKEN }}
-        run: echo The username is ${{ secrets.SERVER_HOST }}
-
     - name: 📂 Deploy to baiduyun server
-      uses: wlixcc/SFTP-Deploy-Action@v1.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.REMOTE_USER }}
-        ssh_private_key: ${{ secrets.BAIDUYUN }}
-        local_path: './build/*'  # 项目build的文件夹路径1
-        remote_path: '/tmp/blog'
+        password: ${{ secrets.PASSWD }}
+        local-dir: './build/*'  # 项目build的文件夹路径1
+        server-dir: '/tmp/blog'
 
 
