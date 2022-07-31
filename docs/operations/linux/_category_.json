@@ -1,0 +1,10 @@
+{
+  "label": "linux基础",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "linux常用知识汇总"
+  }
+}

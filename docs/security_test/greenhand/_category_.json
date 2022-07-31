@@ -1,0 +1,10 @@
+{
+  "label": "新手入门",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "安全测试新手入门"
+  }
+}

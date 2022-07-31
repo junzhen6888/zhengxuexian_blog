@@ -36,6 +36,8 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -57,7 +59,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'My blog',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -65,9 +67,57 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'functional_test/intro',
             position: 'left',
-            label: 'Tutorial',
+            label: '功能测试',
+          },
+          {
+            type: 'doc',
+            docId: 'performance_test/intro',
+            position: 'left',
+            label: '性能测试',
+          },
+          {
+            type: 'doc',
+            docId: 'automated_test/intro',
+            position: 'left',
+            label: '自动化测试',
+          },
+          {
+            type: 'doc',
+            docId: 'security_test/intro',
+            position: 'left',
+            label: '安全测试',
+          },
+          {
+            type: 'doc',
+            docId: 'operations/intro',
+            position: 'left',
+            label: '运维',
+          },
+          {
+            type: 'doc',
+            docId: 'development_language/intro',
+            position: 'left',
+            label: '开发语言',
+          },
+          {
+            type: 'doc',
+            docId: 'database/intro',
+            position: 'left',
+            label: '数据库',
+          },
+          {
+            type: 'doc',
+            docId: 'develop/intro',
+            position: 'left',
+            label: '开发实现',
+          },
+          {
+            type: 'doc',
+            docId: 'test_tool/intro',
+            position: 'left',
+            label: '测试工具',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
