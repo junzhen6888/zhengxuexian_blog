@@ -1,10 +1,10 @@
 {
-  "label": "开发实现",
+  "label": "测试管理",
   "position": 5,
   "collapsible": true,
   "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "开发实现"
+    "description": "测试管理"
   }
 }

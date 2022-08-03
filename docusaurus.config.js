@@ -109,9 +109,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'develop/intro',
+            docId: 'test_manage/intro',
             position: 'left',
-            label: '开发实现',
+            label: '测试管理',
           },
           {
             type: 'doc',
