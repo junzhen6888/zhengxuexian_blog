@@ -2,7 +2,7 @@
   "label": "jmeter",
   "position": 2,
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
     "description": "jmeter从入门到精通"

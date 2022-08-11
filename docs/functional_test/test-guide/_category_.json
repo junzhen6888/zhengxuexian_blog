@@ -2,7 +2,7 @@
   "label": "测试规范",
   "position": 2,
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
     "description": "测试常用规范"

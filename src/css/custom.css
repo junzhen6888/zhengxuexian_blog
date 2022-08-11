@@ -28,3 +28,12 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+:root {
+  --search-local-modal-width: 480px;
+  --search-local-highlight-color: #5468ff;
+}
+
+html[data-theme="dark"] {
+  --search-local-highlight-color: #d23669;
+}
