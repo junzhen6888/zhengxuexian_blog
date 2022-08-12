@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/zhengxuexian_blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -33,23 +33,25 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          sidebarPath: require.resolve("./sidebars.js"),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          breadcrumbs: false,
         },
         blog: {
+          blogTitle: "测试博客",
+          blogDescription: "郑学贤 的个人学习和工作记录",
+          blogSidebarCount: 7,
+          blogSidebarTitle: "文章",
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+        sitemap: {
+          changefreq: "weekly",
+          priority: 0.5,
+          filename: 'sitemap.xml',
         },
       }),
     ],
@@ -64,126 +66,330 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "greenhand",
+        path: "fun/greenhand",
+        routeBasePath: "greenhand",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "guide",
+        path: "fun/guide",
+        routeBasePath: "guide",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "flow",
+        path: "fun/flow",
+        routeBasePath: "flow",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "kbs",
+        path: "fun/kbs",
+        routeBasePath: "kbs",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "auto",
+        path: "auto",
+        routeBasePath: "auto",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "base",
+        path: "perf/base",
+        routeBasePath: "base",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "ctrl",
+        path: "perf/ctrl",
+        routeBasePath: "ctrl",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "jmeter",
+        path: "perf/jmeter",
+        routeBasePath: "jmeter",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "locust",
+        path: "perf/locust",
+        routeBasePath: "locust",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "new",
+        path: "safe/new",
+        routeBasePath: "new",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "kali",
+        path: "safe/kali",
+        routeBasePath: "kali",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "safe_wiki",
+        path: "safe/safe_wiki",
+        routeBasePath: "safe_wiki",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "manage",
+        path: "manage",
+        routeBasePath: "manage",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "dev",
+        path: "wiki/dev",
+        routeBasePath: "dev",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "algo",
+        path: "wiki/algo",
+        routeBasePath: "algo",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "ops",
+        path: "wiki/ops",
+        routeBasePath: "ops",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "database",
+        path: "wiki/database",
+        routeBasePath: "database",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "tool",
+        path: "tool",
+        routeBasePath: "tool",
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      navbar: {
-        title: 'My blog',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+      metadata: [
+        {
+          name: "keywords",
+          content: "功能测试, app测试, web测试, api, 接口测试, 自动化测试, python, java, 性能测试, 渗透测试",
         },
+      ],
+      navbar: {
+        title: "🛫 测试博客",
+        hideOnScroll: true,
         items: [
           {
-            type: 'doc',
-            docId: 'functional_test/intro',
-            position: 'left',
-            label: '功能测试',
+            position: "left",
+            label: "🛴 功能测试",
+            items: [
+              {
+                label: "新手村",
+                to: "/greenhand",
+              },
+              {
+                label: "测试流程",
+                to: "/flow",
+              },
+              {
+                label: "测试规范",
+                to: "/guide",
+              },
+              {
+                label: "测试知识",
+                to: "/kbs",
+              },
+            ],
+          },
+
+          { to: "/auto", label: "🚚 自动化", position: "left" },
+
+          {
+            position: "left",
+            label: "🚑 性能测试",
+            items: [
+              {
+                label: "性能基础",
+                to: "/base",
+              },
+              {
+                label: "性能监控",
+                to: "/ctrl",
+              },
+              {
+                label: "jmeter汇总",
+                to: "/jmeter",
+              },
+              {
+                label: "locust汇总",
+                to: "/locust",
+              },
+            ]
           },
           {
-            type: 'doc',
-            docId: 'performance_test/intro',
-            position: 'left',
-            label: '性能测试',
+            position: "left",
+            label: "⚔️ 渗透测试",
+            items: [
+              {
+                label: "kali汇总",
+                to: "/kali",
+              },
+              {
+                label: "安全入门",
+                to: "/new",
+              },
+            ]
           },
+          { to: "/manage", label: "🧮 测试管理", position: "left" },
           {
-            type: 'doc',
-            docId: 'automated_test/intro',
-            position: 'left',
-            label: '自动化测试',
+            position: "left",
+            label: "🚌 开发百科",
+            items: [
+              {
+                label: "程序语言",
+                to: "/dev",
+              },
+              {
+                label: "数据库",
+                to: "/database",
+              },
+              {
+                label: "网络运维",
+                to: "/ops",
+              },
+              {
+                label: "逻辑算法",
+                to: "/algo",
+              },
+            ],
           },
-          {
-            type: 'doc',
-            docId: 'security_test/intro',
-            position: 'left',
-            label: '安全测试',
-          },
-          {
-            type: 'doc',
-            docId: 'operations/intro',
-            position: 'left',
-            label: '运维',
-          },
-          {
-            type: 'doc',
-            docId: 'development_language/intro',
-            position: 'left',
-            label: '开发语言',
-          },
-          {
-            type: 'doc',
-            docId: 'database/intro',
-            position: 'left',
-            label: '数据库',
-          },
-          {
-            type: 'doc',
-            docId: 'test_manage/intro',
-            position: 'left',
-            label: '测试管理',
-          },
-          {
-            type: 'doc',
-            docId: 'test_tool/intro',
-            position: 'left',
-            label: '测试工具',
-          },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          { to: "/tool", label: "⛽ 测试工具", position: "left" },
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Docs',
-      //       items: [
-      //         {
-      //           label: 'Tutorial',
-      //           to: '/docs/intro',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'Community',
-      //       items: [
-      //         {
-      //           label: 'Stack Overflow',
-      //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //         },
-      //         {
-      //           label: 'Discord',
-      //           href: 'https://discordapp.com/invite/docusaurus',
-      //         },
-      //         {
-      //           label: 'Twitter',
-      //           href: 'https://twitter.com/docusaurus',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'Blog',
-      //           to: '/blog',
-      //         },
-      //         {
-      //           label: 'GitHub',
-      //           href: 'https://github.com/facebook/docusaurus',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      // },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        defaultLanguage: "markdown",
+        additionalLanguages: ["java", "git"],
       },
     }),
 };

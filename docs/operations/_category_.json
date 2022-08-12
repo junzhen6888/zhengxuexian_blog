@@ -2,7 +2,7 @@
   "label": "运维能力",
   "position": 5,
   "collapsible": true,
-  "collapsed": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "运维知识汇总"
