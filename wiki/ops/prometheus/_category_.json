@@ -1,0 +1,10 @@
+{
+  "label": "prometheus",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "prometheus知识大汇总"
+  }
+}
