@@ -1,3 +1,8 @@
+---
+last_update:
+  author: 郑学贤
+---
+
 # 第二章 Prometehus 服务
 
 本章主要介绍 Prometheus 服务的基本使用，包括安装、配置等等。

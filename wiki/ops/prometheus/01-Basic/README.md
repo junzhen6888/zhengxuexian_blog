@@ -1,3 +1,8 @@
+---
+last_update:
+  author: 郑学贤
+---
+
 # 第一章 认识 Prometheus
 
 第一章主要讲解 Prometheus 的基本概念，一些术语解释等等。
