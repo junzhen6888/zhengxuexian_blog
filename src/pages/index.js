@@ -18,13 +18,13 @@ const svgList = [
   {
     title: 'bilibili',
     Svg: require('../../static/img/bilibili.svg').default,
-    link: 'https://space.bilibili.com/223211771',
+    link: 'https://space.bilibili.com/1801867558',
   },
   {
     title: 'wechat',
     Svg: require('../../static/img/wechat.svg').default,
     color: '#2979ff',
-    link: 'https://static.7wate.com/img/2022/06/16/d6dfd36f35293.jpg',
+    link: 'https://github.com/junzhen6888/zhengxuexian_blog/blob/main/static/img/wechat.png',
   },
 ]
 const Svg = ({ Svg, color, title, link }) => {
