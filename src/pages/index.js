@@ -13,7 +13,7 @@ const svgList = [
     title: 'github',
     Svg: require('../../static/img/github.svg').default,
     color: 'black',
-    link: 'https://github.com/7Wate/wiki',
+    link: 'https://junzhen6888.github.io/zhengxuexian_blog/',
   },
   {
     title: 'bilibili',
