@@ -42,7 +42,6 @@ Node exporter and windows exporter dashboard
     * [3.33 Varnish 数据采集](3.33-varnish-exporter.md)
     * [3.34 JSON 数据采集](3.34-json-exporter.md)
     * [3.35 BIND 数据采集](3.35-bind-exporter.md)
-    * [3.36 Telegraf 数据采集](3.36-telegraf-exporter.md)
     * [小结](END.md)
 
 
