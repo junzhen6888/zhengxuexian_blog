@@ -382,7 +382,7 @@ const config = {
               },
             ],
           },
-          { to: "/tool", label: "⛽ 测试工具", position: "left" },
+          { to: "/tool", label: "⛽ 新技术运用", position: "left" },
         ],
       },
       prism: {
