@@ -275,9 +275,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "tool",
-        path: "tool",
-        routeBasePath: "tool",
+        id: "creative",
+        path: "creative",
+        routeBasePath: "creative",
         sidebarPath: require.resolve("./sidebars.js"),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
@@ -382,7 +382,7 @@ const config = {
               },
             ],
           },
-          { to: "/tool", label: "⛽ 新技术运用", position: "left" },
+          { to: "/creative", label: "⛽ 新技术运用", position: "left" },
         ],
       },
       prism: {
