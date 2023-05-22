@@ -1,0 +1,194 @@
+---
+title: 用ChatGPT快速开发chrome插件
+description: 用ChatGPT快速开发chrome插件
+sidebar_position: 9
+last_update:
+  author: 郑学贤
+---
+
+# 快速开发插件
+
+## 询问chatgpt
+问题：
+```
+假如你是一名chrome浏览器的插件开发工程师，我现在想要开发一款插件，插件的功能是提供截图功能，帮忙提供完整的代码
+```
+
+chagpt的回答：
+
+好的，作为一名Chrome浏览器的插件开发工程师，我可以为您提供一个简单的Chrome插件代码示例，来实现截图的功能。
+首先，您需要新建一个文件夹，例如"Screenshot Extension"，并在该文件夹下创建一个"manifest.json"文件，该文件是Chrome插件的配置文件，代码如下：
+```
+{
+  "manifest_version": 2,
+  "name": "Screenshot Extension",
+  "version": "1.0",
+  "description": "This extension provides a screenshot feature",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["activeTab", "tabs", "storage", "unlimitedStorage", "declarativeContent"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icon16.png",
+    "default_title": "Take a screenshot"
+  }
+}
+```
+在该配置文件中，我们定义了插件的名称、版本号、描述、图标等信息，并声明了插件需要的权限和后台脚本文件。
+接下来，我们需要创建一个HTML文件，用于显示插件的界面。您可以在文件夹中创建一个名为"popup.html"的文件，并添加以下代码：
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screenshot Extension</title>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <button id="screenshotBtn" onclick="takeScreenshot()">Take Screenshot</button>
+</body>
+</html>
+```
+
+在该HTML文件中，我们创建了一个按钮，用于触发截图功能，并引入了一个名为"popup.js"的JavaScript文件，该文件用于实现截图的功能。
+接下来，我们需要编写"popup.js"文件的代码，用于实现截图功能。以下是一个简单的代码示例：
+
+```
+function takeScreenshot() {
+  chrome.tabs.captureVisibleTab(null, {format: "png"}, function(dataUrl) {
+    var link = document.createElement("a");
+    link.download = "screenshot.png";
+    link.href = dataUrl;
+    link.click();
+  });
+}
+```
+
+在该JavaScript文件中，我们定义了一个名为"takeScreenshot"的函数，该函数用于实现截图的功能。具体来说，该函数通过调用chrome.tabs.captureVisibleTab方法，
+截取当前活动标签页的屏幕截图，并将截图数据转换为data URL的形式。然后，我们创建了一个a元素，将截图数据URL设置为下载链接的href属性，并将下载链接的download
+属性设置为"screenshot.png"，以指定下载文件的名称和格式。最后，通过调用a元素的click方法，触发下载操作。
+最后，我们需要在"manifest.json"文件中定义一个"popup"字段，指定弹出框的HTML文件和图标，代码如下：
+
+```
+"browser_action": {
+  "default_icon": "icon16.png",
+  "default_title": "Take a screenshot",
+  "default_popup": "popup.html"
+}
+```
+这样，当用户点击插件图标时，会弹出一个包含截图按钮的弹出框，点击该按钮即可进行截图并下载。
+
+以上是一个简单的Chrome插件截图功能的代码示例，希望对您有所帮助。请注意，该示例代码仅供参考，实际开发中可能需要根据具体需求进行修改和优化。
+
+## 优化后的代码
+用上面的代码，导入的chrome浏览器后，再根据报错内容，让chatgpt进行修改，修改后的完整代码如下：
+代码的目录结构：
+@site/static/img/test_img/2023-05-22-17-52-42.png
+
+background.js
+```
+chrome.action.onClicked.addListener(async (tab) => {
+  try {
+    const dataUrl = await chrome.tabs.captureVisibleTab();
+    const blob = await fetch(dataUrl).then((response) => response.blob());
+    chrome.downloads.download({
+      url: dataUrl,
+      filename: "screenshot.png",
+      saveAs: true,
+      conflictAction: "overwrite",
+      method: "GET",
+      headers: [
+        {
+          name: "Content-Type",
+          value: "image/png"
+        }
+      ]
+    });
+  } catch (error) {
+    console.error(error);
+  }
+});
+```
+
+manifest.json
+```
+{
+  "manifest_version": 3,
+  "name": "Screenshot Extension",
+  "version": "1.0",
+  "description": "This extension provides a screenshot feature",
+  "icons": {
+    "16": "1.png",
+    "32": "1.png",
+    "48": "1.png",
+    "128": "1.png"
+  },
+  "permissions": ["activeTab", "downloads"],
+  "action": {
+    "default_icon": "1.png",
+    "default_title": "Take a screenshot"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+```
+
+popup.css
+```
+body {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+```
+
+popup.html
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screenshot Extension</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js"></script>
+</head>
+<body>
+  <button id="screenshotBtn">Take Screenshot</button>
+</body>
+</html>
+```
+
+popup.js
+```
+document.addEventListener("DOMContentLoaded", function() {
+  var screenshotBtn = document.getElementById("screenshotBtn");
+  screenshotBtn.addEventListener("click", function() {
+    chrome.runtime.sendMessage({action: "takeScreenshot"});
+  });
+});
+```
+
+## 截图
+
+@site/static/img/test_img/2023-05-22-17-58-16.png
+
+@site/static/img/test_img/2023-05-22-17-58-49.png
+
+至此，我从一个没有任何插件开发经验的人员，成功完成截图功能插件的开发，虽然文件名称还是有点小缺陷，但不影响使用。
